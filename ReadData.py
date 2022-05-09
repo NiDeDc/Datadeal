@@ -1,9 +1,9 @@
 import csv
 import struct
 
-file = open('data4_27.bin', 'rb')
+file = open('data5_7.bin', 'rb')
 data = file.read()
-with open('data4_27.csv', 'w', newline='') as csvfile:
+with open('data5_7.csv', 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',')
     i = 0
     while i < len(data):
