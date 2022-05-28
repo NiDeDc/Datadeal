@@ -1,7 +1,7 @@
 import csv
 
-MileRange = [12005, 12676]
-sensorRange = [[366, 490], [167, 299], [164, 296], [162, 296]]
+MileRange = [4043, 4744.3]
+sensorRange = [[104, 244], [2, 143], [3 ,145], [0, 140]]
 sensorDiff = []
 for i in sensorRange:
     sensorDiff.append(i[1] - i[0])
