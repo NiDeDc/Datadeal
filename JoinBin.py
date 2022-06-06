@@ -37,5 +37,7 @@ for file in files:
         data = curFile.read()
         newFile.write(data)
         curFile.close()
+        print("close", file)
 if newFile is not None:
     newFile.close()
+    print("close", newFileName)
