@@ -33,7 +33,7 @@ for file in files:
                 newFile = open(os.path.join(newFilePath, newFileName), 'ab+')
                 print("open newFile", newFilePath, newFileName)
         curFile = open(os.path.join(filePath, file), 'rb')
-        print('open curFile' ,file)
+        print('open curFile', file)
         data = curFile.read()
         newFile.write(data)
         curFile.close()
