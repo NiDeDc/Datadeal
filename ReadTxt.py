@@ -9,9 +9,6 @@ class CarData:
         self.position = 0
         self.range = []
         self.type = 0
-        self.plate = '鄂A1V21A       '
-        self.edge = 0
-        self.direction = 0
 
 
 class frameData:
@@ -25,8 +22,8 @@ class frameData:
 
 AllData = []
 sn = 0
-f1 = open("../Datadeal/v.txt", 'r')
-f2 = open("../Datadeal/k.txt", 'r')
+f1 = open("v.txt", 'r')
+f2 = open("k.txt", 'r')
 byt1 = f1.readlines()
 byt2 = f2.readlines()
 for i in range(len(byt1)):
@@ -44,10 +41,9 @@ for i in range(len(byt1)):
     k_list = nk.split(',')
     v_list = nv.split(',')
     num = len(v_list) // 8
-    fra.num = num
-    fra.timestamp = int(float(v_list[6].strip()))
+    carD = CarData()
+    fra.timestamp = int(v_list[6].strip())
     for j in range(num):
-        carD = CarData()
         index = j * 8
         carD.id = int(k_list[j])
         carD.lane = int(v_list[index].strip("[ "))
@@ -56,9 +52,10 @@ for i in range(len(byt1)):
         carD.range.append(int(v_list[index + 4][1:-1]))
         carD.type = int(v_list[index + 5])
         carD.speed = float(v_list[index + 7].strip("] "))
-        if carD.speed >= 0:
-            carD.direction = 0
-        else:
-            carD.direction = 1
         fra.CarData.append(carD)
     AllData.append(fra)
+with open('data5_7.csv', 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter=',')
+    for i in range(len(AllData)):
+        pass
+pass
